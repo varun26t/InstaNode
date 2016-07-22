@@ -6,7 +6,6 @@ var upload = multer({ dest: 'upload/'});
 
 // Get Homepage
 router.get('/', ensureAuthenticated, function(req, res){
-	console.log('reached GET /upload/');
     res.render('upload');
 });
 
@@ -29,7 +28,7 @@ function ensureAuthenticated(req, res, next){
 	if(req.isAuthenticated()){
 		return next();
 	} else {
-		//req.flash('error_msg','You are not logged in');
+		req.flash('error_msg','You need to login before being able to upload');
 		res.redirect('/users/login');
 	}
 }
