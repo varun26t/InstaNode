@@ -1,0 +1,10 @@
+<h2 class="page-header">Profile</h2>
+<div class="container-fluid" ng-app="imgAlbum">
+    <div class="row" ng-controller="imgController" ng-repeat="data in srcarr">
+        {{#each data}}
+            <div class="col-xs-4">
+                <img ng-src="{{data.imgpath}}" alt="NOPE" />
+            </div>
+        {{/each}}
+    </div>
+</div>
